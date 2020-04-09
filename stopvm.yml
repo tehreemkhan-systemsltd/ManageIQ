@@ -1,0 +1,11 @@
+- name: Stop Azure VM
+  hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  connection: local
+  tasks:
+    - name: Stop virtual machine
+      azure_rm_virtualmachine:
+        resource_group: testing
+        name: testing
+        allocated: no
